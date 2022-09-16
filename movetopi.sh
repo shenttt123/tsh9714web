@@ -1,8 +1,7 @@
 #!/bin/bash
 git add --all
-read -p "Enter commit: " commit
+read -p "commit: " commit
 git commit -m $commit
-read -p
 ssh tonyyydf@pi 'bash -s' <<'ENDSSH'
 echo "test"
 cd /var/www/firstweb
