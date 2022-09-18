@@ -9,3 +9,4 @@ ls
 sudo git pull origin master
 sleep 3s
 sudo service apache2 restart
+read -p
