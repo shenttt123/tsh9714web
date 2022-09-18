@@ -29,9 +29,12 @@ while($row = $result->fetch_assoc()) {
 get_time_voltage();
 ?>
 
+<p id="p1">hi</p>
+<p id="p2">hi</p>
+
 <body>
     <div id="chart"></div>
-
+    
     <script>
         function get_time_voltage_from_php(){
         time_voltage = "<?php get_time_voltage()?>";
@@ -48,6 +51,14 @@ get_time_voltage();
             type:'line'
         }]);
 
+        setInterval(function(){
+            temp = get_time_voltage_from_php();
+            document.getElementById("p1").innerHTML = temp[0];
+            document.getElementById("p2").innerHTML = temp[1];
+            Plotly.extendTraces('chart',{ x:[[temp[0]]], y:[[temp[1]]]}, [0],10);
+            },1000);
+
+            
         }
 
 
