@@ -24,7 +24,7 @@ $username = "root";
 $password = "123456A.";
 $dbname = "tsh9714web";
 $conn = new mysqli($servername, $username, $password, $dbname);
-$sql = "select time, voltage from battery_voltage ORDER BY `id` DESC limit 1;";
+$sql = "(select time, voltage from battery_voltage ORDER BY `time` DESC limit 1400) order by `time` asc;";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()) {
     echo $row["time"]. " ".$row["voltage"]. " ";
