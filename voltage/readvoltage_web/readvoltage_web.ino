@@ -4,7 +4,7 @@
 const char WIFI_SSID[] = "Wang";
 const char WIFI_PASSWORD[] = "200787201277";
 
-String HOST_NAME = "http://10.0.0.29/"; // change to your PC's IP address
+String HOST_NAME = "http://10.0.0.95/"; // change to your PC's IP address
 String PATH_NAME   = "voltage/insertv.php?voltage=";
 String voltage_string = "";
 void setup() {
@@ -23,7 +23,7 @@ void setup() {
   
   HTTPClient http;
 
-  http.begin(HOST_NAME + PATH_NAME + get_voltage()); //HTTP
+  http.begin(HOST_NAME + PATH_NAME + '0'); //HTTP
   int httpCode = http.GET();
   if(httpCode > 0) {
     // file found at server
@@ -52,16 +52,16 @@ void loop() {
 }
 
 String get_voltage(){
-  float voltage1 = analogRead(36) * (3.3 * 2 / 4095.0);
+  float voltage1 = analogRead(36) * (3.3 * 3 / 4095.0);
   delay(20000);
-  float voltage2 = analogRead(36) * (6.6 / 4095.0);
+  float voltage2 = analogRead(36) * (3.3 * 3 / 4095.0);
   delay(20000);
-  float voltage3 = analogRead(36) * (6.6 / 4095.0);
+  float voltage3 = analogRead(36) * (3.3 * 3 / 4095.0);
   delay(20000);
-  float voltage4 = analogRead(36) * (6.6 / 4095.0);
+  float voltage4 = analogRead(36) * (3.3 * 3 / 4095.0);
   delay(20000);
-  float voltage5 = analogRead(36) * (6.6 / 4095.0);
+  float voltage5 = analogRead(36) * (3.3 * 3 / 4095.0);
   delay(20000);
   float voltage = (voltage1+voltage2+voltage3+voltage4+voltage5)/5;
-  return String(voltage,3);
+  return String(voltage*1.04,3);
 }
