@@ -1,7 +1,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char WIFI_SSID[] = "Wang";
+const char WIFI_SSID[] = "";
 const char WIFI_PASSWORD[] = "";
 
 String HOST_NAME = "http://10.0.0.95/"; // change to your PC's IP address
