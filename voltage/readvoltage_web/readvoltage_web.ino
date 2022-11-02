@@ -2,7 +2,7 @@
 #include <HTTPClient.h>
 
 const char WIFI_SSID[] = "Wang";
-const char WIFI_PASSWORD[] = "200787201277";
+const char WIFI_PASSWORD[] = "";
 
 String HOST_NAME = "http://10.0.0.95/"; // change to your PC's IP address
 String PATH_NAME   = "voltage/insertv.php?voltage=";
